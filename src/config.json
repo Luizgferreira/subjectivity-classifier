@@ -1,0 +1,15 @@
+{
+	"embeddings":{				
+				"size_vector": 600,
+				"min_count": 4,
+				"window": 4,
+				"epochs": 100,
+				"progress": 10000
+	},
+	"model":{
+				"num_neurons":100,
+				"loss":"categorical_crossentropy",
+				"optimizer":"adam",
+				"epochs": 15 
+	}
+}
