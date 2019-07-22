@@ -1,4 +1,4 @@
-# Subjectivity Classificator for Portuguese
+# Subjectivity Classifier for Portuguese
 
 This project aims to classify whether a sentence express any kind of sentiment/opinion or is a objetive/non-opinative sentence using machine learning techniques.
 
