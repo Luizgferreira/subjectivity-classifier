@@ -7,7 +7,7 @@
 				"progress": 10000
 	},
 	"model":{
-				"num_neurons":100,
+				"num_neurons":50,
 				"loss":"categorical_crossentropy",
 				"optimizer":"adam",
 				"epochs": 30 
