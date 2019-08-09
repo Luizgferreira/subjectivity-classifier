@@ -43,7 +43,23 @@ def run():
     if(options.choice=='train'):
         manage.train(logger, config, options)
     elif(options.choice=='test'):
-        crossValidation.CV(logger, config, correlated=options.toCorrelate)
+        '''        
+        acc = 0
+        for i in range(50,450, 10):
+            config['model']['num_neurons']=i
+            for j in range(6, 50, 2):
+                config['model']['epochs']=j
+                res = crossValidation.CV(logger, config, correlated=options.toCorrelate)
+                if(res['accuracy'][0]>acc):
+                    acc = res['accuracy'][0]
+                    j_final = j
+                    i_final = i
+                    print('acc: '+str(acc)+' neuron: '+str(i)+' epochs: '+str(j))
+        print(res_final)
+        print('neuron: ', i)
+        print('epochs:', j)
+        '''
+        print(crossValidation.CV(logger, config, correlated=options.toCorrelate))
     elif(options.choice=='classify'):
         manage.file_classify(logger, options, file_path, correlated=options.toCorrelate)
     elif(options.choice=='interactive'):

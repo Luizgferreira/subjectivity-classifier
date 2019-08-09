@@ -1,22 +1,341 @@
-2019-07-21 21:12:10,884 Starting logging with options: 
-Namespace(choice='interactive', input=None, output='output.txt', toBuildEmbeddings=False, toCorrelate=False, toPreprocess=False) 
+2019-08-04 14:29:35,745 Starting logging with options: 
+Namespace(choice='test', input=None, output='output.txt', toBuildEmbeddings=False, toCorrelate=True, toPreprocess=False) 
  config:
-{'embeddings': {'size_vector': 600, 'min_count': 4, 'window': 4, 'epochs': 100, 'progress': 10000}, 'model': {'num_neurons': 100, 'loss': 'categorical_crossentropy', 'optimizer': 'adam', 'epochs': 15}}
-2019-07-21 21:12:10,915 From /home/luiz/.local/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+{'embeddings': {'size_vector': 600, 'min_count': 4, 'window': 4, 'epochs': 100, 'progress': 10000}, 'model': {'num_neurons': 100, 'loss': 'categorical_crossentropy', 'optimizer': 'adam', 'epochs': 30}}
+2019-08-04 14:29:35,746 Starting cross validation function
+2019-08-04 14:29:35,764 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:35,764 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:29:35,794 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:29:35,794 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:29:35,814 setting ignored attribute vectors_norm to None
+2019-08-04 14:29:35,815 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:29:35,815 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:29:35,815 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:29:35,833 setting ignored attribute cum_table to None
+2019-08-04 14:29:35,834 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:35,867 precomputing L2-norms of word weight vectors
+2019-08-04 14:29:36,038 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:36,038 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:29:36,113 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:29:36,114 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:29:36,130 setting ignored attribute vectors_norm to None
+2019-08-04 14:29:36,130 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:29:36,130 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:29:36,130 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:29:36,146 setting ignored attribute cum_table to None
+2019-08-04 14:29:36,146 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:36,175 precomputing L2-norms of word weight vectors
+2019-08-04 14:29:48,377 From /home/luiz/.local/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.
-2019-07-21 21:12:11,045 From /home/luiz/.local/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+2019-08-04 14:29:48,480 From /home/luiz/.local/lib/python3.6/site-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.cast instead.
-2019-07-21 21:12:16,512 Lexicons loaded!
-2019-07-21 21:12:16,641 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
-2019-07-21 21:12:16,642 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
-2019-07-21 21:12:16,662 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
-2019-07-21 21:12:16,662 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
-2019-07-21 21:12:16,684 setting ignored attribute vectors_norm to None
-2019-07-21 21:12:16,684 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
-2019-07-21 21:12:16,684 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
-2019-07-21 21:12:16,684 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
-2019-07-21 21:12:16,702 setting ignored attribute cum_table to None
-2019-07-21 21:12:16,702 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
-2019-07-21 21:12:16,728 precomputing L2-norms of word weight vectors
+2019-08-04 14:29:51,762 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:51,762 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:29:51,829 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:29:51,829 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:29:51,847 setting ignored attribute vectors_norm to None
+2019-08-04 14:29:51,847 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:29:51,847 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:29:51,847 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:29:51,863 setting ignored attribute cum_table to None
+2019-08-04 14:29:51,864 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:51,890 precomputing L2-norms of word weight vectors
+2019-08-04 14:29:52,115 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:52,115 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:29:52,138 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:29:52,138 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:29:52,154 setting ignored attribute vectors_norm to None
+2019-08-04 14:29:52,154 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:29:52,154 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:29:52,154 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:29:52,171 setting ignored attribute cum_table to None
+2019-08-04 14:29:52,171 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:52,197 precomputing L2-norms of word weight vectors
+2019-08-04 14:29:52,366 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:52,366 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:29:52,394 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:29:52,394 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:29:52,413 setting ignored attribute vectors_norm to None
+2019-08-04 14:29:52,413 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:29:52,413 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:29:52,413 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:29:52,431 setting ignored attribute cum_table to None
+2019-08-04 14:29:52,431 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:29:52,466 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:07,131 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:07,131 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:07,154 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:07,154 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:07,170 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:07,170 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:07,170 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:07,170 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:07,186 setting ignored attribute cum_table to None
+2019-08-04 14:30:07,187 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:07,217 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:07,428 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:07,428 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:07,494 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:07,495 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:07,513 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:07,514 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:07,514 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:07,514 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:07,530 setting ignored attribute cum_table to None
+2019-08-04 14:30:07,530 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:07,558 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:07,713 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:07,714 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:07,736 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:07,736 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:07,753 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:07,753 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:07,753 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:07,753 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:07,769 setting ignored attribute cum_table to None
+2019-08-04 14:30:07,769 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:07,797 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:19,742 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:19,742 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:19,819 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:19,819 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:19,839 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:19,839 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:19,839 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:19,839 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:19,859 setting ignored attribute cum_table to None
+2019-08-04 14:30:19,859 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:19,890 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:20,166 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:20,166 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:20,199 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:20,199 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:20,220 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:20,220 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:20,220 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:20,220 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:20,240 setting ignored attribute cum_table to None
+2019-08-04 14:30:20,240 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:20,273 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:20,480 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:20,480 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:20,509 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:20,509 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:20,529 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:20,529 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:20,529 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:20,529 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:20,549 setting ignored attribute cum_table to None
+2019-08-04 14:30:20,549 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:20,586 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:32,533 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:32,533 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:32,563 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:32,563 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:32,580 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:32,580 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:32,580 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:32,580 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:32,596 setting ignored attribute cum_table to None
+2019-08-04 14:30:32,596 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:32,623 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:32,846 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:32,846 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:32,869 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:32,869 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:32,886 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:32,886 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:32,886 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:32,886 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:32,902 setting ignored attribute cum_table to None
+2019-08-04 14:30:32,902 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:32,928 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:33,083 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:33,083 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:33,161 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:33,161 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:33,178 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:33,178 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:33,178 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:33,178 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:33,194 setting ignored attribute cum_table to None
+2019-08-04 14:30:33,194 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:33,223 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:45,541 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:45,541 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:45,572 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:45,572 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:45,588 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:45,588 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:45,588 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:45,588 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:45,605 setting ignored attribute cum_table to None
+2019-08-04 14:30:45,605 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:45,631 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:45,870 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:45,871 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:45,942 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:45,942 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:45,961 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:45,961 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:45,961 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:45,961 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:45,978 setting ignored attribute cum_table to None
+2019-08-04 14:30:45,978 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:46,003 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:46,161 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:46,161 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:46,184 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:46,184 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:46,200 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:46,200 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:46,200 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:46,200 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:46,216 setting ignored attribute cum_table to None
+2019-08-04 14:30:46,216 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:46,245 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:58,120 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:58,121 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:58,146 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:58,146 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:58,163 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:58,163 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:58,163 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:58,163 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:58,179 setting ignored attribute cum_table to None
+2019-08-04 14:30:58,179 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:58,204 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:58,451 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:58,451 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:58,523 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:58,523 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:58,540 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:58,540 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:58,540 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:58,540 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:58,556 setting ignored attribute cum_table to None
+2019-08-04 14:30:58,556 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:58,581 precomputing L2-norms of word weight vectors
+2019-08-04 14:30:58,745 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:58,745 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:30:58,769 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:30:58,769 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:30:58,786 setting ignored attribute vectors_norm to None
+2019-08-04 14:30:58,786 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:30:58,786 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:30:58,786 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:30:58,802 setting ignored attribute cum_table to None
+2019-08-04 14:30:58,802 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:30:58,833 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:11,687 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:11,687 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:11,761 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:11,761 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:11,780 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:11,780 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:11,780 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:11,780 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:11,796 setting ignored attribute cum_table to None
+2019-08-04 14:31:11,797 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:11,822 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:12,074 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:12,074 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:12,097 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:12,097 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:12,114 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:12,114 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:12,114 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:12,114 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:12,130 setting ignored attribute cum_table to None
+2019-08-04 14:31:12,130 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:12,155 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:12,316 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:12,316 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:12,339 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:12,339 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:12,355 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:12,355 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:12,355 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:12,355 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:12,371 setting ignored attribute cum_table to None
+2019-08-04 14:31:12,371 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:12,400 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:24,732 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:24,732 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:24,807 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:24,807 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:24,825 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:24,825 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:24,825 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:24,825 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:24,841 setting ignored attribute cum_table to None
+2019-08-04 14:31:24,841 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:24,866 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:25,132 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:25,132 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:25,155 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:25,155 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:25,171 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:25,171 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:25,171 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:25,171 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:25,187 setting ignored attribute cum_table to None
+2019-08-04 14:31:25,187 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:25,213 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:25,371 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:25,371 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:25,394 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:25,394 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:25,411 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:25,411 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:25,411 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:25,411 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:25,427 setting ignored attribute cum_table to None
+2019-08-04 14:31:25,427 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:25,455 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:37,427 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:37,427 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:37,503 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:37,504 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:37,521 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:37,521 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:37,521 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:37,521 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:37,537 setting ignored attribute cum_table to None
+2019-08-04 14:31:37,538 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:37,563 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:37,838 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:37,838 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:37,861 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:37,861 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:37,878 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:37,878 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:37,878 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:37,878 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:37,894 setting ignored attribute cum_table to None
+2019-08-04 14:31:37,894 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:37,919 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:38,075 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:38,075 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:38,098 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:38,098 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:38,114 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:38,114 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:38,114 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:38,114 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:38,130 setting ignored attribute cum_table to None
+2019-08-04 14:31:38,130 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:38,159 precomputing L2-norms of word weight vectors
+2019-08-04 14:31:50,280 loading Word2Vec object from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:50,281 {'kw': {}, 'mode': 'rb', 'uri': '/home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model'}
+2019-08-04 14:31:50,359 loading wv recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.* with mmap=None
+2019-08-04 14:31:50,359 loading vectors from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.wv.vectors.npy with mmap=None
+2019-08-04 14:31:50,377 setting ignored attribute vectors_norm to None
+2019-08-04 14:31:50,378 loading vocabulary recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.vocabulary.* with mmap=None
+2019-08-04 14:31:50,378 loading trainables recursively from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.* with mmap=None
+2019-08-04 14:31:50,378 loading syn1neg from /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model.trainables.syn1neg.npy with mmap=None
+2019-08-04 14:31:50,394 setting ignored attribute cum_table to None
+2019-08-04 14:31:50,394 loaded /home/luiz/Documents/subjectivity-classification/src/data/model/word2vecBuscape.model
+2019-08-04 14:31:50,419 precomputing L2-norms of word weight vectors

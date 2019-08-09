@@ -10,6 +10,6 @@
 				"num_neurons":100,
 				"loss":"categorical_crossentropy",
 				"optimizer":"adam",
-				"epochs": 15 
+				"epochs": 30 
 	}
 }

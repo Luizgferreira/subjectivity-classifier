@@ -7,12 +7,14 @@ from gensim.models import Word2Vec
 from gensim.models import KeyedVectors
 
 #informations about the xlsx file containing the corpus
+
 SHEET = "Pesquisa"
 DATA_COLUMN = 2
 LABEL_COLUMN = 1
 
+
 def adjust_label(labels):
-    labels = [1 if x in [-1,-2, 1] else 0 for x in labels]
+    labels = [1 if x in [-1,-2, 1, 2] else 0 for x in labels]
     return labels
 
 

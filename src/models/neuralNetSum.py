@@ -10,11 +10,13 @@ from keras import backend as K
 
 from src.data import getData
 from src.models.correlation import correlation_dictionary
-def transformSum(corpus, correlated):
+def transformSum(corpus, correlated, cross_validation=False):
     '''transform each sentence into the sum of embeddings'''
     word_vectors = getData.getEmbeddings().wv
     #normalize
     word_vectors.init_sims(replace=True)
+    if(correlated and cross_validation):
+        correlation_dictionary(corpus)
     corpus = [sentence.split(' ') for sentence in corpus]
     corpus_sum = [[0]*word_vectors.vector_size for sentence in corpus]
     if(correlated):
@@ -37,7 +39,7 @@ def transformSum(corpus, correlated):
 def buildNN_sum(corpus, labels, logger, config, cross_validation=False, correlated=False):
     file_path = os.path.split(os.path.abspath(__file__))[0]
     #transform each sentence into the sum of word vectors
-    corpus = transformSum(corpus, correlated)
+    corpus = transformSum(corpus, correlated, cross_validation=cross_validation)
     #transform one dimensional into categorical for classification
     labels = np_utils.to_categorical(labels, num_classes=2)
     #neural network model -> one hidden layer with n_neurons neurons

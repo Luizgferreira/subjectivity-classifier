@@ -65,6 +65,6 @@ def CV(logger, config, k=10, correlated=None):
     fp.close()
     for key, value in resultsDict.items():
         resultsDict[key] = (mean(value), stdev(value))
-    print('(mean, stdev)')
-    print(resultsDict)
+    #print('(mean, stdev)')
+    return(resultsDict)
     logger.info("Finished cross validation")
